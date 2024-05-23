@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Desencriptar Mensaje</title>
+</head>
+<body>
+    <h1>Desencriptar Mensaje</h1>
+    <form action="/desencriptar" method="post">
+        <label for="clave">Clave:</label>
+        <input type="text" id="clave" name="clave" required>
+        <button type="submit">Desencriptar</button>
+    </form>
+
+    {% if mensaje_desencriptado %}
+    <h2>Mensaje Desencriptado</h2>
+    <p>{{ mensaje_desencriptado }}</p>
+    {% elif error %}
+    <h2>Error</h2>
+    <p>{{ error }}</p>
+    {% endif %}
+
+    <a href="/">Encriptar Mensaje</a>
+</body>
+</html>
